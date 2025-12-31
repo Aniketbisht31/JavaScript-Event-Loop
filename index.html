@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Loop Autopsy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>JavaScript Event Loop Autopsy</h1>
+
+<div class="controls">
+  <button onclick="loadDemo()">Run Demo</button>
+  <button onclick="step()">Step</button>
+  <button onclick="starvation()">Microtask Starvation 🔥</button>
+  <button onclick="reset()">Reset</button>
+</div>
+
+<div class="grid">
+  <div class="box" id="callstack">
+    <h2>Call Stack</h2>
+    <div class="content" id="callstack-items"></div>
+  </div>
+
+  <div class="box" id="microtasks">
+    <h2>Microtask Queue</h2>
+    <div class="content" id="microtask-items"></div>
+  </div>
+
+  <div class="box" id="macrotasks">
+    <h2>Macrotask Queue</h2>
+    <div class="content" id="macrotask-items"></div>
+  </div>
+
+  <div class="box" id="timers">
+    <h2>Timer (Min Heap)</h2>
+    <div class="content" id="timer-items"></div>
+  </div>
+</div>
+
+<div class="box log">
+  <h2>Scheduler Log</h2>
+  <div id="log"></div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
