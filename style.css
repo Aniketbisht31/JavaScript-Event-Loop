@@ -1,0 +1,93 @@
+body {
+  background: #0b0f14;
+  color: #eaeaea;
+  font-family: monospace;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.controls {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+button {
+  background: linear-gradient(135deg,#1fa34a,#00ff88);
+  border: none;
+  padding: 8px 14px;
+  margin: 5px;
+  color: black;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.box {
+  background: #121821;
+  border-radius: 12px;
+  padding: 10px;
+  min-height: 170px;
+  position: relative;
+  transition: box-shadow .3s;
+}
+
+.box.active {
+  box-shadow: 0 0 30px rgba(0,255,150,.9);
+}
+
+.box.starving {
+  animation: pulseRed 1s infinite;
+}
+
+@keyframes pulseRed {
+  0% { box-shadow: 0 0 10px red; }
+  50% { box-shadow: 0 0 30px red; }
+  100% { box-shadow: 0 0 10px red; }
+}
+
+.box h2 {
+  font-size: 14px;
+  text-align: center;
+}
+
+.content {
+  min-height: 110px;
+}
+
+.task {
+  background: #ff5fa2;
+  padding: 6px 10px;
+  border-radius: 10px;
+  margin: 6px 0;
+  font-size: 13px;
+  text-align: center;
+  animation: pop .3s ease;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.task.executing {
+  transform: scale(1.15);
+  box-shadow: 0 0 25px rgba(0,255,170,.9);
+}
+
+.micro { background: #ff9f43; }
+.timer { background: #4aa3ff; }
+
+@keyframes pop {
+  from { opacity: 0; transform: scale(.6); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.log {
+  margin-top: 20px;
+  font-size: 13px;
+}
